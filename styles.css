@@ -11,11 +11,12 @@ body {
     align-items: center;
     margin: 0;
     min-height: 100vh;
+    font-family: Blinker, sans-serif;
 }
 
 .game-card {
     display: grid;
-    grid-template: 200px 1em auto auto 80px 1em / 1em auto auto 1em;
+    grid-template: 200px 1em auto auto auto 80px 1em / 1em auto auto 1em;
     width: 90%;
     max-width: 720px;
     background: var(--bg-color);
@@ -29,12 +30,6 @@ body {
     grid-column: 1 / -1;
 }
 
-.game-card-title,
-.game-card-time,
-.game-card-btn {
-    font-family: Blinker, sans-serif;
-}
-
 .game-card-title, 
 .game-card-body {
     grid-column: 2 / -2;
@@ -45,18 +40,42 @@ body {
     font-size: 1.75rem;
     margin: 0;
     grid-row: 3;
+    letter-spacing: 1px;
+}
+
+.game-card-year {
+    font-size: .75em;
+}
+
+.game-card-players, .game-card-genre {
+    grid-row: 4;
+    margin: .3em 0 .5em;
+    font-weight: 700;
+    letter-spacing: .2px;
+}
+
+.game-card-players {
+    grid-column: 3;
+    justify-self: end;
+}
+
+.game-card-genre {
+    grid-column: 2;
 }
 
 .game-card-body {
     font-size: 1rem;
     font-family: 'Source Sans Pro', sans-serif;
     line-height: 1.5;
-    grid-row: 4;
+    grid-row: 5;
+    margin: 0;
+    padding-top: .4em;
+    border-top: 1px solid rgba(232, 221, 203, .5);
 }
 
 .game-card-btn, 
 .game-card-time {
-    grid-row: 5;
+    grid-row: 6;
     align-self: end;
 }
 
@@ -74,7 +93,7 @@ body {
 
 .game-card-btn:focus, 
 .game-card-btn:hover {
-    color: #031634;
+    background: #ff9e03;
 }
 
 .game-card-time {
@@ -95,7 +114,7 @@ body {
 /* MEDIA QUERIES */
 @media (min-width: 600px) {
     .game-card {
-        grid-template: 1.5em auto auto 150px 1.5em / 200px 1.5em auto auto 1.5em;
+        grid-template: 1.5em auto auto auto 100px 1.5em / 200px 1.5em auto auto 1.5em;
     }
 
     .game-card-img {
@@ -113,12 +132,25 @@ body {
     }
 
     .game-card-body {
+        grid-row: 4;
+    }
+
+    .game-card-genre,
+    .game-card-players {
         grid-row: 3;
+    }
+
+    .game-card-genre {
+        grid-column: 3;
+    }
+
+    .game-card-players {
+        grid-column: 4;
     }
 
     .game-card-btn, 
     .game-card-time {
-        grid-row: 4;
+        grid-row: 5;
     }
 
     .game-card-btn {
